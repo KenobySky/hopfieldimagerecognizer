@@ -9,8 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import net.andrelopes.hopfieldImageRecognizer.Assets;
-import net.andrelopes.hopfieldImageRecognizer.ImageController;
+import net.andrelopes.hopfieldPatternRecognizer.utils.Assets;
+import net.andrelopes.hopfieldImageRecognizer.logic.ImageController;
 import net.andrelopes.hopfieldImageRecognizer.logic.Hopfield;
 
 /**
@@ -18,7 +18,7 @@ import net.andrelopes.hopfieldImageRecognizer.logic.Hopfield;
  *
  * @author André Vinícius Lopes
  */
-public class MainViewScreen extends ScreenAdapter {
+public class ViewScreen extends ScreenAdapter {
 
     public Hopfield hopfield;
     private ImageController imageController;

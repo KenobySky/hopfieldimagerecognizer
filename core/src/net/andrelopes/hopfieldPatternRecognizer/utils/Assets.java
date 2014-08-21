@@ -1,4 +1,4 @@
-package net.andrelopes.hopfieldImageRecognizer;
+package net.andrelopes.hopfieldPatternRecognizer.utils;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;

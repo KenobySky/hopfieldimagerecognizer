@@ -1,4 +1,4 @@
-package net.andrelopes.hopfieldImageRecognizer;
+package net.andrelopes.hopfieldImageRecognizer.logic;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;

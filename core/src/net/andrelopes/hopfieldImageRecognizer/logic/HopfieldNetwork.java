@@ -14,8 +14,7 @@ import net.andrelopes.hopfieldPatternRecognizer.utils.BipolarUtilities;
 import net.andrelopes.hopfieldPatternRecognizer.utils.ExtraMatrixUtils;
 
 /**
- * André: I made several changes to this Class... But since was based on the
- * given class, i decided to give credit, etc :P
+ * @Andre I made several changes to this Class..
  *
  * HopfieldNetwork: This class implements a Hopfield neural network. A Hopfield
  * neural network is fully connected and consists of a single layer. Hopfield
