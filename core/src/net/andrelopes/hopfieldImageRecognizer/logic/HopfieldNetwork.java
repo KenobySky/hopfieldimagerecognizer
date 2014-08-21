@@ -10,12 +10,12 @@
 package net.andrelopes.hopfieldImageRecognizer.logic;
 
 import cookie.Matrixes.DoubleMatrix;
-import net.andrelopes.hopfieldImageRecognizer.utils.BipolarUtilities;
-import net.andrelopes.hopfieldImageRecognizer.utils.ExtraMatrixUtils;
+import net.andrelopes.hopfieldPatternRecognizer.utils.BipolarUtilities;
+import net.andrelopes.hopfieldPatternRecognizer.utils.ExtraMatrixUtils;
 
 /**
- * André: I made several changes to this Class... But since was based on the given
- * class, i decided to give credit, etc :P
+ * André: I made several changes to this Class... But since was based on the
+ * given class, i decided to give credit, etc :P
  *
  * HopfieldNetwork: This class implements a Hopfield neural network. A Hopfield
  * neural network is fully connected and consists of a single layer. Hopfield
@@ -86,7 +86,7 @@ public class HopfieldNetwork {
             }
 
             // Convert the dot product to either true or false.
-			output[col] = dotProduct > 0;
+            output[col] = dotProduct > 0;
         }
 
         return output;
@@ -112,26 +112,22 @@ public class HopfieldNetwork {
         for (int i = 0; i < identity.numRows; i++) {
             for (int j = 0; j < identity.numCols; j++) {
                 if (i == j) {
-                    identity.setValueAt(i, j,(short) 1);
+                    identity.setValueAt(i, j, (short) 1);
                 } else {
-                    identity.setValueAt(i, j,(short) 0);
+                    identity.setValueAt(i, j, (short) 0);
                 }
             }
         }
 
         // subtract the identity matrix
         //final Matrix m4 = MatrixMath.subtract(m3, identity);
-        
         //Fm1 Size9;9
         //Fm2 Size9;1
-
-        
-        
         //M3 :10000;10000
         //M5 :10000;10000
         System.out.println(" M3 :" + m3.numRows + ";" + m3.numCols);
         System.out.println(" M5 :" + identity.numRows + ";" + identity.numCols);
-        
+
         final DoubleMatrix m4 = m3.minus(m3, identity);
 
         // now add the calculated matrix, for this pattern, to the

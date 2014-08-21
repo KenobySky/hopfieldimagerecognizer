@@ -13,8 +13,11 @@ import net.andrelopes.hopfieldImageRecognizer.Assets;
 import net.andrelopes.hopfieldImageRecognizer.ImageController;
 import net.andrelopes.hopfieldImageRecognizer.logic.Hopfield;
 
-/** revised by DermetFan :) Or Robin?
- *  @author André Vinícius Lopes */
+/**
+ * revised by DermetFan :) Or Robin?
+ *
+ * @author André Vinícius Lopes
+ */
 public class MainViewScreen extends ScreenAdapter {
 
     public Hopfield hopfield;
@@ -23,18 +26,18 @@ public class MainViewScreen extends ScreenAdapter {
     private Stage stage = new Stage();
     private Table buttonsTable = new Table();
 
-	@Override
+    @Override
     public void show() {
         hopfield = new Hopfield();
         imageController = new ImageController();
 
         Gdx.input.setInputProcessor(stage);
 
-		Skin skin = Assets.getSkin();
+        Skin skin = Assets.getSkin();
 
-		TextButton train = new TextButton("Train", skin);
-		TextButton exit = new TextButton("Exit", skin);
-		TextButton presentPattern = new TextButton("Present Pattern", skin);
+        TextButton train = new TextButton("Train", skin);
+        TextButton exit = new TextButton("Exit", skin);
+        TextButton presentPattern = new TextButton("Present Pattern", skin);
 
         train.setSize(5, 15);
 
@@ -50,33 +53,33 @@ public class MainViewScreen extends ScreenAdapter {
 
         //Add listeners
         train.addListener(new ClickListener() {
-			public void clicked(InputEvent event, float x, float y) {
-				//This loads the images and calculate the hopfield boolean vector.
-				System.out.println("FLAG A - Starting calculating Boolean");
-				imageController.calculateBoolean();
+            public void clicked(InputEvent event, float x, float y) {
+                //This loads the images and calculate the hopfield boolean vector.
+                System.out.println("Starting calculating Boolean");
+                imageController.calculateBoolean();
 
-				//This trains the Hopfield.
-				System.out.println("FLAG B - Finished calculating Boolean , Starting train...");
-				hopfield.train(imageController.correctImageBoolean);
-				System.out.println("FLAG C - Finished training");
-			}
-		});
+                //This trains the Hopfield.
+                System.out.println("Finished calculating Boolean , Starting training...");
+                hopfield.train(imageController.originalImage);
+                System.out.println("Finished training");
+            }
+        });
 
         presentPattern.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				System.out.println("FLAG D - Starting Presenting Data");
-				hopfield.present(imageController.incorrectImageBoolean);
-				System.out.println("Done process.. FLAG E - Finished Presenting Data");
-			}
-		});
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                System.out.println("Starting Presenting Data");
+                hopfield.present(imageController.fakeImage);
+                System.out.println("Done process..Finished Presenting Data");
+            }
+        });
 
         exit.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				Gdx.app.exit();
-			}
-		});
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                Gdx.app.exit();
+            }
+        });
     }
 
     @Override
@@ -86,18 +89,16 @@ public class MainViewScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        //Isso limpa a tela.
+
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        
-        //Manda o Stage Agir.Tudo que for Ui, é jogado no stage
+
         stage.act(delta);
-        //Manda o stage desenhar na tela
+
         stage.draw();
     }
 
     @Override
     public void dispose() {
-        //Tudo que tiver o metodo dispose, coloca aqui.
         stage.dispose();
 
     }

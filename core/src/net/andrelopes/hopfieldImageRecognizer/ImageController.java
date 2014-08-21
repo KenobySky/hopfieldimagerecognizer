@@ -12,33 +12,31 @@ public class ImageController {
     private Pixmap correctImage;
     private Pixmap incorrectImage;
 
-    public boolean[] correctImageBoolean, incorrectImageBoolean;
+    public boolean[] originalImage, fakeImage;
 
     public ImageController() {
 
     }
 
     public void calculateBoolean() {
-       
+
         incorrectImage = new Pixmap(Gdx.files.internal("etc/blackwhiteFake.png"));
         correctImage = new Pixmap(Gdx.files.internal("etc/blackwhite.png"));
 
         System.out.println("CorrectImage Format :" + correctImage.getFormat());
         System.out.println("IncorrectImage Format :" + incorrectImage.getFormat());
 
-        correctImageBoolean = getImageBoolean(correctImage);
-        incorrectImageBoolean = getImageBoolean(incorrectImage);
+        originalImage = getImageBoolean(correctImage);
+        fakeImage = getImageBoolean(incorrectImage);
         correctImage.dispose();
         incorrectImage.dispose();
-        
+
         System.out.println("Finished calculateBoolean()");
 
     }
 
     public boolean[] getImageBoolean(Pixmap image) {
 
-        //0 = white
-        //1 = Black
         boolean[] result = new boolean[image.getHeight() * image.getWidth()];
         int index = 0;
 
