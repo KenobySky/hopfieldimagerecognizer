@@ -1,6 +1,6 @@
 package net.andrelopes.hopfieldImageRecognizer.logic;
 
-import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
 
 /**
@@ -9,29 +9,26 @@ import com.badlogic.gdx.graphics.Pixmap;
  */
 public class ImageController {
 
-    private Pixmap correctImage;
-    private Pixmap incorrectImage;
+    private Pixmap pixmap;
 
-    public boolean[] originalImage, fakeImage;
+    private boolean[] pixels;
 
     public ImageController() {
 
     }
 
-    public void calculateBoolean() {
+    public boolean[] calculateBoolean(FileHandle file) {
 
-        incorrectImage = new Pixmap(Gdx.files.internal("etc/blackwhiteFake.png"));
-        correctImage = new Pixmap(Gdx.files.internal("etc/blackwhite.png"));
+        pixmap = new Pixmap(file);
 
-        System.out.println("CorrectImage Format :" + correctImage.getFormat());
-        System.out.println("IncorrectImage Format :" + incorrectImage.getFormat());
+        System.out.println("Image Format :" + pixmap.getFormat());
 
-        originalImage = getImageBoolean(correctImage);
-        fakeImage = getImageBoolean(incorrectImage);
-        correctImage.dispose();
-        incorrectImage.dispose();
+        pixels = getImageBoolean(pixmap);
+        pixmap.dispose();
 
         System.out.println("Finished calculateBoolean()");
+
+        return pixels;
 
     }
 
