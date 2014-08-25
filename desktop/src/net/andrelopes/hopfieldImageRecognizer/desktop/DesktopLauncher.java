@@ -7,14 +7,14 @@ import net.andrelopes.hopfieldImageRecognizer.HopfieldImageRecognizer;
 
 public class DesktopLauncher {
 
-	public static void main(String[] arg) {
-		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.width = 640;
-		config.height = 480;
-		config.vSyncEnabled = false;
-		config.title = "Hopfield Image-Pattern Recognizer 0.2";
-		config.initialBackgroundColor = Color.WHITE;
-		new LwjglApplication(new HopfieldImageRecognizer(), config);
-	}
+    public static void main(String[] arg) {
+        LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+        config.width = 800;
+        config.height = 600;
+        config.vSyncEnabled = false;
+        config.title = "Hopfield Image-Pattern Recognizer 0.2";
+        config.initialBackgroundColor = Color.WHITE;
+        new LwjglApplication(new HopfieldImageRecognizer(), config);
+    }
 
 }
