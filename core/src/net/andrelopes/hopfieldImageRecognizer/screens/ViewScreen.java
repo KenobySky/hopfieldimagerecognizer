@@ -24,7 +24,10 @@ public class ViewScreen extends ScreenAdapter {
 
     private Controller controller;
 
+    private TextField messageField;
+
     @Override
+
     public void show() {
         controller = new Controller(this);
         Gdx.input.setInputProcessor(stage);
@@ -38,8 +41,8 @@ public class ViewScreen extends ScreenAdapter {
         TextButton stopPresenting = new TextButton("Stop Presenting", skin);
         TextButton stopTraining = new TextButton("Stop Training", skin);
 
-        TextField tf = new TextField("Test", skin);
-
+        messageField = new TextField("", skin);
+        messageField.setDisabled(true);
         train.setSize(5, 15);
 
         exit.setSize(5, 15);
@@ -54,7 +57,7 @@ public class ViewScreen extends ScreenAdapter {
         buttonsTable.add(stopPresenting).size(Gdx.graphics.getWidth() / 3, 30);
         buttonsTable.add(stopTraining).size(Gdx.graphics.getWidth() / 3, 30);
         buttonsTable.row();
-        buttonsTable.add(tf).size(Gdx.graphics.getWidth(), 30);
+        buttonsTable.add(messageField).size(Gdx.graphics.getWidth(), 30).colspan(3);
         stage.addActor(buttonsTable);
 
         train.addListener(new ClickListener() {
@@ -105,7 +108,8 @@ public class ViewScreen extends ScreenAdapter {
     }
 
     protected void showMessage(String msg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        messageField.setText(msg);
+
     }
 
 }

@@ -66,14 +66,13 @@ public class Controller {
 
     public void train() {
 
-        if (!trainThread.isRunning()) {
+        if (trainThread == null || !trainThread.isRunning()) {
 
             FileHandle selectFile = selectFile();
             trainThread = new TrainThread(this, selectFile, hopfield);
 
             Thread t = new Thread(trainThread);
             t.run();
-
         } else {
             showMessage("Cant Train because Thread is already Working");
         }
