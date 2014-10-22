@@ -1,0 +1,1 @@
+java -Xmx3g -jar desktop\build\libs\desktop-0.2.jar
