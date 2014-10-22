@@ -1,12 +1,12 @@
-# README #
+# Currently Under Development #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Hopfield recognizement of Images ##
+
 
 ### What is this repository for? ###
 
 * Quick summary
 * Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up? ###
 
@@ -25,5 +25,4 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+Send a private message to [André Lopes](http://bitbucket.org/andrelopes1705)
