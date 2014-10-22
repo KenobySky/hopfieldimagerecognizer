@@ -1,6 +1,6 @@
-# Currently Under Development #
+# Hopfield recognizement of Images #
+*Only Avaiable for Desktop due to high memory usage.*
 
-## Hopfield recognizement of Images ##
 
 
 ### What is this repository for? ###
