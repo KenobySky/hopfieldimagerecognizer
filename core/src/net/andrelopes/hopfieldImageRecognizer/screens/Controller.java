@@ -9,8 +9,8 @@ import net.andrelopes.hopfieldImageRecognizer.logic.Hopfield;
 import net.andrelopes.hopfieldImageRecognizer.threads.PresentThread;
 import net.andrelopes.hopfieldImageRecognizer.threads.TrainThread;
 import net.andrelopes.hopfieldPatternRecognizer.utils.Assets;
-import net.dermetfan.utils.libgdx.scene2d.ui.FileChooser.Listener;
-import net.dermetfan.utils.libgdx.scene2d.ui.ListFileChooser;
+import net.dermetfan.gdx.scenes.scene2d.ui.FileChooser.Listener;
+import net.dermetfan.gdx.scenes.scene2d.ui.ListFileChooser;
 
 /**
  *
