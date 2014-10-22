@@ -35,6 +35,7 @@ public class HopfieldNetwork {
     private DoubleMatrix weightMatrix;
 
     public HopfieldNetwork(final int size) {
+
         this.weightMatrix = new DoubleMatrix(size, size);
 
     }
@@ -97,17 +98,15 @@ public class HopfieldNetwork {
         }
 
         //Create a row matrix from the input, convert boolean to bipolar
-        //final SimpleMatrix m2 = SimpleMatrix.createRowMatrix(BipolarUtilities.bipolar2double(pattern));
         DoubleMatrix m2 = BipolarUtilities.bipolar2double(pattern);
 
         // Transpose the matrix and multiply by the original input matrix
         DoubleMatrix m1 = m2.transpose(m2);
         DoubleMatrix m3 = m1.multiply(m1, m2);
 
-        // matrix 3 should be square by now, so create an identity
-        // matrix of the same size.
-        //final SimpleMatrix identity = MatrixMath.identity(m3.getRows());
+        //Matrix 3 should be square by now, so create an identity matrix of the same size.
         DoubleMatrix identity = new DoubleMatrix(m3.numRows, m3.numCols);
+
         for (int i = 0; i < identity.numRows; i++) {
             for (int j = 0; j < identity.numCols; j++) {
                 if (i == j) {

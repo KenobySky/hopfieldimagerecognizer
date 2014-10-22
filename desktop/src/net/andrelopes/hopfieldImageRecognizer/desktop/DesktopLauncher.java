@@ -12,7 +12,7 @@ public class DesktopLauncher {
         config.width = 800;
         config.height = 600;
         config.vSyncEnabled = false;
-        config.title = "Hopfield Image-Pattern Recognizer 0.2";
+        config.title = "Hopfield Image-Pattern Recognizer 0.9";
         config.initialBackgroundColor = Color.WHITE;
         new LwjglApplication(new HopfieldImageRecognizer(), config);
     }

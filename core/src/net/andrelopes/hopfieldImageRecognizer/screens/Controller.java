@@ -46,6 +46,12 @@ public class Controller {
      */
     private FileHandle faultyFile;
 
+    /**
+     *
+     * Thread used to Train or to recognize.
+     */
+    private Thread currentThread;
+
     public Controller(ViewScreen screen) {
         this.viewScreen = screen;
         hopfield = new Hopfield();
@@ -94,9 +100,8 @@ public class Controller {
             if (trainThread == null || !trainThread.isRunning()) {
 
                 trainThread = new TrainThread(this, correctFile, hopfield);
-
-                Thread t = new Thread(trainThread);
-                t.run();
+                currentThread = new Thread(trainThread);
+                currentThread.start();
 
                 showMessage("Training Hopfield...");
             } else {
@@ -108,7 +113,7 @@ public class Controller {
 
     public void presentPattern() {
 
-        if (!presentThread.isRunning()) {
+        if (presentThread == null) {
 
             presentThread = new PresentThread(this, faultyFile, hopfield);
 

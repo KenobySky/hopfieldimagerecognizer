@@ -46,17 +46,17 @@ public class ImageController {
             for (int y = 0; y < image.getHeight(); y++) {
 
                 int pixel = image.getPixel(x, y);
-                System.out.println("\n Index");
-                System.out.println("Pixel Value :" + pixel);
+                //System.out.println("\n Index");
+                //System.out.println("Pixel Value :" + pixel);
 
                 if (pixel == white) {
-                    System.out.println("White Pixel Recognized at [" + x + ";" + y + "]");
+                    //System.out.println("White Pixel Recognized at [" + x + ";" + y + "]");
                     result[index] = false;
                 } else if (pixel == black) {
-                    System.out.println("Black Pixel Recognized at [" + x + ";" + y + "]");
+                    //System.out.println("Black Pixel Recognized at [" + x + ";" + y + "]");
                     result[index] = true;
                 } else {
-                    System.out.println("Pixel Not Recognized at [" + x + ";" + y + "]");
+                    //System.out.println("Pixel Not Recognized at [" + x + ";" + y + "]");
                 }
 
                 index++;
